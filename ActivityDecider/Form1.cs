@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace ActivityDecider
 {
-    public partial class Form1 : Form
+    public partial class OptionsForm : Form
     {
-        public Form1()
+        NamesForm form2 = new NamesForm(); //creates a variable form NamesForm
+        public OptionsForm()
         {
             InitializeComponent();
+        }
+
+
+        private void goToEnterNameButton_Click(object sender, EventArgs e)
+        {
+            form2.Show(); //opens form2
+            this.Hide(); //hides this form
         }
     }
 }
