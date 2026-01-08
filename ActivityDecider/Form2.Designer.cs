@@ -76,7 +76,7 @@
             this.enterNameButton.BackColor = System.Drawing.Color.Black;
             this.enterNameButton.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterNameButton.ForeColor = System.Drawing.Color.White;
-            this.enterNameButton.Location = new System.Drawing.Point(323, 236);
+            this.enterNameButton.Location = new System.Drawing.Point(342, 236);
             this.enterNameButton.Name = "enterNameButton";
             this.enterNameButton.Size = new System.Drawing.Size(130, 74);
             this.enterNameButton.TabIndex = 9;
