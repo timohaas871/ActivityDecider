@@ -30,11 +30,12 @@
         {
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.enterNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.yourNameLabel = new System.Windows.Forms.Label();
             this.enterNameButton = new System.Windows.Forms.Button();
             this.goToVoteButton = new System.Windows.Forms.Button();
             this.checkNamesButton = new System.Windows.Forms.Button();
             this.checkNamesLabel = new System.Windows.Forms.Label();
+            this.redoNamesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -59,17 +60,17 @@
     "o check if all of the names are correct";
             this.enterNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // yourNameLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(182, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 41);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Your name:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.yourNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.yourNameLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yourNameLabel.ForeColor = System.Drawing.Color.White;
+            this.yourNameLabel.Location = new System.Drawing.Point(182, 167);
+            this.yourNameLabel.Name = "yourNameLabel";
+            this.yourNameLabel.Size = new System.Drawing.Size(175, 41);
+            this.yourNameLabel.TabIndex = 2;
+            this.yourNameLabel.Text = "Your name:";
+            this.yourNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // enterNameButton
             // 
@@ -89,19 +90,21 @@
             this.goToVoteButton.BackColor = System.Drawing.Color.Black;
             this.goToVoteButton.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToVoteButton.ForeColor = System.Drawing.Color.White;
-            this.goToVoteButton.Location = new System.Drawing.Point(652, 161);
+            this.goToVoteButton.Location = new System.Drawing.Point(652, 219);
             this.goToVoteButton.Name = "goToVoteButton";
-            this.goToVoteButton.Size = new System.Drawing.Size(136, 74);
+            this.goToVoteButton.Size = new System.Drawing.Size(136, 91);
             this.goToVoteButton.TabIndex = 10;
-            this.goToVoteButton.Text = "Go to vote!";
+            this.goToVoteButton.Text = "Yes, go to vote!";
             this.goToVoteButton.UseVisualStyleBackColor = false;
+            this.goToVoteButton.Visible = false;
+            this.goToVoteButton.Click += new System.EventHandler(this.goToVoteButton_Click);
             // 
             // checkNamesButton
             // 
             this.checkNamesButton.BackColor = System.Drawing.Color.Black;
             this.checkNamesButton.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkNamesButton.ForeColor = System.Drawing.Color.White;
-            this.checkNamesButton.Location = new System.Drawing.Point(323, 350);
+            this.checkNamesButton.Location = new System.Drawing.Point(342, 350);
             this.checkNamesButton.Name = "checkNamesButton";
             this.checkNamesButton.Size = new System.Drawing.Size(136, 88);
             this.checkNamesButton.TabIndex = 11;
@@ -116,11 +119,25 @@
             this.checkNamesLabel.ForeColor = System.Drawing.Color.White;
             this.checkNamesLabel.Location = new System.Drawing.Point(57, 256);
             this.checkNamesLabel.Name = "checkNamesLabel";
-            this.checkNamesLabel.Size = new System.Drawing.Size(713, 156);
+            this.checkNamesLabel.Size = new System.Drawing.Size(540, 156);
             this.checkNamesLabel.TabIndex = 12;
             this.checkNamesLabel.Text = "here are the names dispayed";
             this.checkNamesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkNamesLabel.Visible = false;
+            // 
+            // redoNamesButton
+            // 
+            this.redoNamesButton.BackColor = System.Drawing.Color.Black;
+            this.redoNamesButton.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.redoNamesButton.ForeColor = System.Drawing.Color.White;
+            this.redoNamesButton.Location = new System.Drawing.Point(652, 338);
+            this.redoNamesButton.Name = "redoNamesButton";
+            this.redoNamesButton.Size = new System.Drawing.Size(136, 86);
+            this.redoNamesButton.TabIndex = 13;
+            this.redoNamesButton.Text = "No, redo names";
+            this.redoNamesButton.UseVisualStyleBackColor = false;
+            this.redoNamesButton.Visible = false;
+            this.redoNamesButton.Click += new System.EventHandler(this.redoNamesButton_Click);
             // 
             // NamesForm
             // 
@@ -128,10 +145,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.redoNamesButton);
             this.Controls.Add(this.checkNamesButton);
             this.Controls.Add(this.goToVoteButton);
             this.Controls.Add(this.enterNameButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.yourNameLabel);
             this.Controls.Add(this.enterNameLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.checkNamesLabel);
@@ -147,10 +165,11 @@
 
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label enterNameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label yourNameLabel;
         private System.Windows.Forms.Button enterNameButton;
         private System.Windows.Forms.Button goToVoteButton;
         private System.Windows.Forms.Button checkNamesButton;
         private System.Windows.Forms.Label checkNamesLabel;
+        private System.Windows.Forms.Button redoNamesButton;
     }
 }

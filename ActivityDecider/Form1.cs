@@ -12,7 +12,6 @@ namespace ActivityDecider
 {
     public partial class OptionsForm : Form
     {
-        NamesForm form2 = new NamesForm(); //creates a variable form NamesForm
         public OptionsForm()
         {
             InitializeComponent();
@@ -21,8 +20,9 @@ namespace ActivityDecider
 
         private void goToEnterNameButton_Click(object sender, EventArgs e)
         {
+            NamesForm form2 = new NamesForm(); //creates a variable for NamesForm
             form2.Show(); //opens form2
-            this.Hide(); //hides this form
+            this.Hide(); //hides this form (first form can't be closed, otherwise program crashes)
         }
     }
 }
