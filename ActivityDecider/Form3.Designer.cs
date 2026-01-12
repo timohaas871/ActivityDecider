@@ -72,6 +72,7 @@
             this.option2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.option2PictureBox.TabIndex = 4;
             this.option2PictureBox.TabStop = false;
+            this.option2PictureBox.Click += new System.EventHandler(this.option2PictureBox_Click);
             // 
             // option3PictureBox
             // 
@@ -82,6 +83,7 @@
             this.option3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.option3PictureBox.TabIndex = 5;
             this.option3PictureBox.TabStop = false;
+            this.option3PictureBox.Click += new System.EventHandler(this.option3PictureBox_Click);
             // 
             // yourNameLabel
             // 

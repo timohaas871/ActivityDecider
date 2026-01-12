@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,10 +13,13 @@ namespace ActivityDecider
 
     public static class SharedData
     {
-        public static List<string> friends = new List<string>(); //create a List for friends
+        public static List<string> friends = new List<string>(); //create a list for friends
+        public static List<string> friendsVoted = new List<string>(); //create a list for friends that have already voted
+        public static List<string> friendsCheated = new List<string>(); //create a list for friends that cheat
         public static int poolVote = 0; //public variables for the amount of votes for the options
         public static int cinemaVote = 0;
         public static int gameNightVote = 0;
+        
 
     }
 }
