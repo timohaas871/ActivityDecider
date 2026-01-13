@@ -34,6 +34,7 @@
             this.option3PictureBox = new System.Windows.Forms.PictureBox();
             this.yourNameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.revealVotesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.option1PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option3PictureBox)).BeginInit();
@@ -106,12 +107,27 @@
             this.nameTextBox.Size = new System.Drawing.Size(236, 36);
             this.nameTextBox.TabIndex = 7;
             // 
+            // revealVotesButton
+            // 
+            this.revealVotesButton.BackColor = System.Drawing.Color.Black;
+            this.revealVotesButton.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revealVotesButton.ForeColor = System.Drawing.Color.White;
+            this.revealVotesButton.Location = new System.Drawing.Point(326, 271);
+            this.revealVotesButton.Name = "revealVotesButton";
+            this.revealVotesButton.Size = new System.Drawing.Size(137, 99);
+            this.revealVotesButton.TabIndex = 11;
+            this.revealVotesButton.Text = "Reveal votes";
+            this.revealVotesButton.UseVisualStyleBackColor = false;
+            this.revealVotesButton.Visible = false;
+            this.revealVotesButton.Click += new System.EventHandler(this.revealVotesButton_Click);
+            // 
             // VoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.revealVotesButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.yourNameLabel);
             this.Controls.Add(this.option3PictureBox);
@@ -136,5 +152,6 @@
         private System.Windows.Forms.PictureBox option3PictureBox;
         private System.Windows.Forms.Label yourNameLabel;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button revealVotesButton;
     }
 }

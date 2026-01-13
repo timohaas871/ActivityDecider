@@ -13,13 +13,14 @@ namespace ActivityDecider
 {
     public partial class VoteForm : Form
     {
-        
+
+        int vote; //variable to count the votes
         public VoteForm()
         {
             InitializeComponent();
         }
 
-        private void option1PictureBox_Click(object sender, EventArgs e) //when option1 is clicked
+        private async void option1PictureBox_Click(object sender, EventArgs e) //when option1 is clicked
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
@@ -27,19 +28,26 @@ namespace ActivityDecider
             if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
             {
                 SharedData.poolVote++; //poolVote goes up by one
+                vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
+                this.BackColor = Color.LawnGreen; //turns background color green
+                voteLabel.Text = name + ", you successfully voted for going to the pool!"; //output for a successful vote
+                await Task.Delay(4000); //waiting 4 seconds before
+                this.BackColor = Color.Black; //turning the background color black again
+                voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
+                checkVoteCompleted(); //checks if everyone has voted
             }
 
 
             else
             {
-                cheatConsequences();
+                cheatConsequences(); //consequences for cheating
             }
         }
 
 
-        private void option2PictureBox_Click(object sender, EventArgs e)
+        private async void option2PictureBox_Click(object sender, EventArgs e)
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
@@ -47,19 +55,26 @@ namespace ActivityDecider
             if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
             {
                 SharedData.cinemaVote++; //cinemaVote goes up by one
+                vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
+                this.BackColor = Color.LawnGreen; //turns background color green
+                voteLabel.Text = name + ", you successfully voted for watching a movie at the cinema!";
+                await Task.Delay(4000); //waiting 4 seconds before
+                this.BackColor = Color.Black; //turning the background color black again
+                voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
+                checkVoteCompleted(); //checks if everyone has voted
             }
 
 
             else
             {
-                cheatConsequences();
+                cheatConsequences(); //consequences for cheating
             }
         }
         
 
-        private void option3PictureBox_Click(object sender, EventArgs e)
+        private async void option3PictureBox_Click(object sender, EventArgs e)
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
@@ -67,21 +82,30 @@ namespace ActivityDecider
             if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
             {
                 SharedData.gameNightVote++; //movieNightVote goes up by one
+                vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
+                this.BackColor = Color.LawnGreen; //turns background color green
+                voteLabel.Text = name + ", you successfully voted for doing a game night!"; //output for a successful vote
+                await Task.Delay(4000); //waiting 4 seconds before
+                this.BackColor = Color.Black; //turning the background color black again
+                voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
+                checkVoteCompleted(); //checks if everyone has voted
             }
 
 
             else
             {
-                cheatConsequences();
+                cheatConsequences(); //consequences for cheating
             }
         }
 
-        
 
 
-        public async void cheatConsequences()
+
+
+
+        public async void cheatConsequences() //method for consequences for cheating
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
@@ -104,5 +128,26 @@ namespace ActivityDecider
         }
 
 
+        private void checkVoteCompleted() //method to check if everyone has voted
+        {
+            if (vote == SharedData.friends.Count) //if the amount of votes are the same as the amount of friends
+            {
+                option1PictureBox.Visible = false; //turning the options invisible no new votes can be submitted
+                option2PictureBox.Visible = false;
+                option3PictureBox.Visible = false;
+                nameTextBox.Visible = false; //textBox and Label for the aesthetics
+                yourNameLabel.Visible = false;
+
+                voteLabel.Text = "Everyone has voted! Now go to the page to reveal the votes";
+                revealVotesButton.Visible = true; //making the button visible to open new form
+            }
+        }
+
+        private void revealVotesButton_Click(object sender, EventArgs e)
+        {
+            RevealForm form4 = new RevealForm(); //creates a variable for RevealForm
+            form4.Show(); //opens form4
+            this.Close(); //closes this form
+        }
     }
 }

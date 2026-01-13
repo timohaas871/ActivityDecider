@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Timo Haase
+//ActivityDecider
+//created on January 7th 2026
+//program to help friends decide what they want to do together
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
