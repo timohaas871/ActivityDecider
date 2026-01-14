@@ -136,6 +136,7 @@
             this.Controls.Add(this.voteLabel);
             this.Name = "VoteForm";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.VoteForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.option1PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option3PictureBox)).EndInit();

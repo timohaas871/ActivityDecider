@@ -44,7 +44,7 @@ namespace ActivityDecider
             {
                 nameTextBox.Text = ""; //resets the text in the textBox
                 enterNameLabel.Text = "You can't add a name twice!"; //and tells the friend they can't add their name twice
-                await Task.Delay(4000); //waits 4 seconds before changing the text back
+                await Task.Delay(4000); //waiting 4 seconds before changing the text back
                 enterNameLabel.Text = "Now please enter your name and hit the Got it button, if you are the last one also check if all of the names are correct";
             }
         }
@@ -55,7 +55,7 @@ namespace ActivityDecider
         private void checkNamesButton_Click(object sender, EventArgs e)
         {
             checkNamesLabel.Visible = true;
-            checkNamesLabel.Text = "Are the names correct?\n"; //changing the text to confirm names
+            checkNamesLabel.Text = "Are these names correct?\n"; //changing the text to confirm names
             checkNamesButton.Visible = false; //turns buttons visible and invisible
             goToVoteButton.Visible = true;
             enterNameButton.Visible = false;

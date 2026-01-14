@@ -31,7 +31,7 @@ namespace ActivityDecider
                 vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
-                this.BackColor = Color.LawnGreen; //turns background color green
+                this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for going to the pool!"; //output for a successful vote
                 await Task.Delay(4000); //waiting 4 seconds before
                 this.BackColor = Color.Black; //turning the background color black again
@@ -58,7 +58,7 @@ namespace ActivityDecider
                 vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
-                this.BackColor = Color.LawnGreen; //turns background color green
+                this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for watching a movie at the cinema!";
                 await Task.Delay(4000); //waiting 4 seconds before
                 this.BackColor = Color.Black; //turning the background color black again
@@ -85,7 +85,7 @@ namespace ActivityDecider
                 vote++; //amount of votes in general goes up
                 SharedData.friendsVoted.Add(name); //adds name to the list
                 nameTextBox.Text = "";
-                this.BackColor = Color.LawnGreen; //turns background color green
+                this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for doing a game night!"; //output for a successful vote
                 await Task.Delay(4000); //waiting 4 seconds before
                 this.BackColor = Color.Black; //turning the background color black again
@@ -121,9 +121,9 @@ namespace ActivityDecider
                 voteLabel.Text = name + ", you tried to cheat! This name wasn't entered before!"; //output cheating
 
             this.BackColor = Color.Red; //turning the form's background color red
-            await Task.Delay(3000); //waiting three seconds before
+            nameTextBox.Text = ""; //resetting the entered text
+            await Task.Delay(3000); //waiting 3 seconds before
             voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //changing the text back to normal
-            nameTextBox.Text = "";
             this.BackColor = Color.Black; //changing the background color back to black
         }
 
@@ -138,7 +138,7 @@ namespace ActivityDecider
                 nameTextBox.Visible = false; //textBox and Label for the aesthetics
                 yourNameLabel.Visible = false;
 
-                voteLabel.Text = "Everyone has voted! Now go to the page to reveal the votes";
+                voteLabel.Text = "Everyone has voted! Now let's see what the results are.";
                 revealVotesButton.Visible = true; //making the button visible to open new form
             }
         }
@@ -148,6 +148,11 @@ namespace ActivityDecider
             RevealForm form4 = new RevealForm(); //creates a variable for RevealForm
             form4.Show(); //opens form4
             this.Close(); //closes this form
+        }
+
+        private void VoteForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
