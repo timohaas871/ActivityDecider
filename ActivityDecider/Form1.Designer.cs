@@ -125,11 +125,11 @@
             this.goToEnterNameButton.BackColor = System.Drawing.Color.Black;
             this.goToEnterNameButton.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToEnterNameButton.ForeColor = System.Drawing.Color.White;
-            this.goToEnterNameButton.Location = new System.Drawing.Point(623, 48);
+            this.goToEnterNameButton.Location = new System.Drawing.Point(613, 43);
             this.goToEnterNameButton.Name = "goToEnterNameButton";
-            this.goToEnterNameButton.Size = new System.Drawing.Size(139, 84);
+            this.goToEnterNameButton.Size = new System.Drawing.Size(149, 89);
             this.goToEnterNameButton.TabIndex = 8;
-            this.goToEnterNameButton.Text = "We\'re ready to enter our names";
+            this.goToEnterNameButton.Text = "Click if you\'re ready to enter your names";
             this.goToEnterNameButton.UseVisualStyleBackColor = false;
             this.goToEnterNameButton.Click += new System.EventHandler(this.goToEnterNameButton_Click);
             // 

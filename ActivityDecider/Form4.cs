@@ -47,7 +47,7 @@ namespace ActivityDecider
             {
                 int random = randGen.Next(1, 3); //random number between 1 and 2
                 
-                revealLabel.Text += "going to the pool and watching a movie at the cinema were tied, the random winner is ";
+                revealLabel.Text += "going to the pool and watching a movie at the cinema were tied, the randomly decided option is ";
                 if (random == 1)
                     revealLabel.Text += "going to the pool! Have fun :)";
                 else if (random == 2)
@@ -58,7 +58,7 @@ namespace ActivityDecider
             {
                 int random = randGen.Next(1, 3); //random number between 1 and 2
 
-                revealLabel.Text += "going to the pool and doing a game night at home were tied, the random winner is ";
+                revealLabel.Text += "going to the pool and doing a game night at home were tied, the randomly decided option is ";
                 if (random == 1)
                     revealLabel.Text += "going to the pool! Have fun :)";
                 else if (random == 2)
@@ -69,7 +69,7 @@ namespace ActivityDecider
             {
                 int random = randGen.Next(1, 3); //random number between 1 and 2
 
-                revealLabel.Text += "watching a movie at the cinema and doing a game night at home were tied, the random winner is ";
+                revealLabel.Text += "watching a movie at the cinema and doing a game night at home were tied, the randomly decided option is ";
                 if (random == 1)
                     revealLabel.Text += "watching a movie at the cinema! Have fun :)";
                 else if (random == 2)

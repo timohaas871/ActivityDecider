@@ -34,13 +34,16 @@ namespace ActivityDecider
         {
             String name = nameTextBox.Text; //creates string name for the content of the textBox
 
-            if (!SharedData.friends.Contains(name)) //if friends doesn't contain name
+            if ((!SharedData.friends.Contains(name)) && (nameTextBox.Text != "")) //if friends doesn't contain name
             {
                 SharedData.friends.Add(nameTextBox.Text); //adds the name to the List
                 nameTextBox.Text = ""; //removing the old text
             }
 
-            else //if friends already contains the name
+            else if (nameTextBox.Text == "") //if nameTextBox has no text
+                nameTextBox.Visible = true; //does something but what is does doesn't matter, should have no effect
+
+            else //if friends list already contains the name
             {
                 nameTextBox.Text = ""; //resets the text in the textBox
                 enterNameLabel.Text = "You can't add a name twice!"; //and tells the friend they can't add their name twice
@@ -60,7 +63,10 @@ namespace ActivityDecider
             goToVoteButton.Visible = true;
             enterNameButton.Visible = false;
             redoNamesButton.Visible = true;
-            
+            enterNameLabel.Visible = false;
+            yourNameLabel.Visible = false;
+            nameTextBox.Visible = false;
+
             for (int i = 0; i < SharedData.friends.Count; i++) //outputs all of the names
             {
                 checkNamesLabel.Text += SharedData.friends[i] + "    "; //outputs the name and then spaces
@@ -76,7 +82,10 @@ namespace ActivityDecider
             checkNamesButton.Visible = true; //turns buttons visible and invisible
             goToVoteButton.Visible = false;
             enterNameButton.Visible = true;
+            enterNameLabel.Visible = true;
             redoNamesButton.Visible = false;
+            yourNameLabel.Visible = true;
+            nameTextBox.Visible = true;
         }
 
         private void goToVoteButton_Click(object sender, EventArgs e)

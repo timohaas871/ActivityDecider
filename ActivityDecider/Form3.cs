@@ -24,8 +24,8 @@ namespace ActivityDecider
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
-            //if name is in the friends list but not in the list for friends that have already voted
-            if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
+            //if name is in the friends list but not in the list for friends that have already voted and name is not nothing
+            if (((SharedData.friends.Contains(name))&&(!SharedData.friendsVoted.Contains(name)))&&(nameTextBox.Text != ""))
             {
                 SharedData.poolVote++; //poolVote goes up by one
                 vote++; //amount of votes in general goes up
@@ -33,11 +33,20 @@ namespace ActivityDecider
                 nameTextBox.Text = "";
                 this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for going to the pool!"; //output for a successful vote
+                option1PictureBox.Enabled = false; //disabling options so you can't immediately click again
+                option2PictureBox.Enabled = false;
+                option3PictureBox.Enabled = false;
                 await Task.Delay(4000); //waiting 4 seconds before
+                option1PictureBox.Enabled = true; //enabling options again so the next person can vote
+                option2PictureBox.Enabled = true;
+                option3PictureBox.Enabled = true;
                 this.BackColor = Color.Black; //turning the background color black again
                 voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
                 checkVoteCompleted(); //checks if everyone has voted
             }
+
+            else if (nameTextBox.Text == "") //if no name is entered
+                nameTextBox.Visible = true; //something is done that has no effect
 
 
             else
@@ -51,8 +60,8 @@ namespace ActivityDecider
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
-            //if name is in the friends list but not in the list for friends that have already voted
-            if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
+            //if name is in the friends list but not in the list for friends that have already voted and name is not nothing
+            if (((SharedData.friends.Contains(name))&&(!SharedData.friendsVoted.Contains(name)))&&(nameTextBox.Text != ""))
             {
                 SharedData.cinemaVote++; //cinemaVote goes up by one
                 vote++; //amount of votes in general goes up
@@ -60,11 +69,20 @@ namespace ActivityDecider
                 nameTextBox.Text = "";
                 this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for watching a movie at the cinema!";
+                option1PictureBox.Enabled = false; //disabling options so you can't immediately click again
+                option2PictureBox.Enabled = false;
+                option3PictureBox.Enabled = false;
                 await Task.Delay(4000); //waiting 4 seconds before
+                option1PictureBox.Enabled = true; //enabling options again so the next person can vote
+                option2PictureBox.Enabled = true;
+                option3PictureBox.Enabled = true;
                 this.BackColor = Color.Black; //turning the background color black again
                 voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
                 checkVoteCompleted(); //checks if everyone has voted
             }
+
+            else if (nameTextBox.Text == "") //if no name is entered
+                nameTextBox.Visible = true; //something is done that has no effect
 
 
             else
@@ -78,8 +96,8 @@ namespace ActivityDecider
         {
             string name = nameTextBox.Text; //the text from nameTextBox is used as the value for name
 
-            //if name is in the friends list but not in the list for friends that have already voted
-            if ((SharedData.friends.Contains(name)) && (!SharedData.friendsVoted.Contains(name)))
+            //if name is in the friends list but not in the list for friends that have already voted and name is not nothing
+            if (((SharedData.friends.Contains(name))&&(!SharedData.friendsVoted.Contains(name)))&&(nameTextBox.Text != ""))
             {
                 SharedData.gameNightVote++; //movieNightVote goes up by one
                 vote++; //amount of votes in general goes up
@@ -87,11 +105,20 @@ namespace ActivityDecider
                 nameTextBox.Text = "";
                 this.BackColor = Color.YellowGreen; //turns background color green
                 voteLabel.Text = name + ", you successfully voted for doing a game night!"; //output for a successful vote
+                option1PictureBox.Enabled = false; //disabling options so you can't immediately click again
+                option2PictureBox.Enabled = false;
+                option3PictureBox.Enabled = false;
                 await Task.Delay(4000); //waiting 4 seconds before
+                option1PictureBox.Enabled = true; //enabling options again so the next person can vote
+                option2PictureBox.Enabled = true;
+                option3PictureBox.Enabled = true;
                 this.BackColor = Color.Black; //turning the background color black again
                 voteLabel.Text = "It is time to vote! Enter the name and click on the image that you want to vote for. But don't cheat..."; //and resetting the label's text
                 checkVoteCompleted(); //checks if everyone has voted
             }
+
+            else if (nameTextBox.Text == "") //if no name is entered
+                nameTextBox.Visible = true; //something is done that has no effect
 
 
             else
